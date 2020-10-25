@@ -1,0 +1,47 @@
+// compress: true, sourceMap: true
+
+@import 'pieces/_vars.less';
+
+html,
+body {
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    background: @primary;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+
+// Blocks
+
+@import 'blocks/_header.less';
+@import 'blocks/_intro.less';
+@import 'blocks/_about-me.less';
+@import 'blocks/_project.less';
+@import 'blocks/_portfolio.less';
+@import 'blocks/_contacts.less';
+@import 'blocks/_footer.less';
+@import 'pieces/_social-icons.less';

@@ -1,0 +1,59 @@
+// main: ../style.less
+
+.about-me {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+}
+.about-me-container {
+    display: flex;
+    min-width: 920px;
+    width: 60%;
+}
+.about-me-main {
+    position: relative;
+    display: flex;
+    width: 50%;
+}
+.about-me-box {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 364px;
+    height: 364px;
+    border: 12px solid @secondary;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    z-index: 2;
+}
+.about-me-box h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: @secondary;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    letter-spacing: 0.5rem;
+}
+.about-me-photo {
+    position: absolute;
+    z-index: 1;
+    top: -80px;
+}
+.about-me-photo img {
+    display: block;
+    width: 100%;
+}
+.about-me-text {
+    display: flex;
+    width: 50%;
+}
+.about-me-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 60px;
+    color: @secondary;
+}
