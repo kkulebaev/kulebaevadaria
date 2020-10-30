@@ -46,7 +46,7 @@ $(function () {
     new Vivus('telegramIcon', { duration: 200 })
     new Vivus('vkIcon', { duration: 200 })
 
-    /* Smooth animation sections */
+    /* Animation sections */
     AOS.init({
         // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -66,5 +66,11 @@ $(function () {
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    })
+
+    /* Modal windows / Sweet Alert */
+    let formBtn = document.querySelector('#form__btn')
+    formBtn.addEventListener('click', function () {
+        Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
     })
 })

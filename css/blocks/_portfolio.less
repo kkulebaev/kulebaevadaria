@@ -4,20 +4,21 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-}
-.portfolio-item {
-    width: 33.333333%;
-    overflow: hidden;
-}
-.portfolio-item img {
-    display: block;
-    width: 100%;
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
-}
-.portfolio-item img:hover {
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -o-transform: scale(1.05);
+
+    &__item {
+        width: 33.333333%;
+        overflow: hidden;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: scale(1);
+        transition: transform 1s ease-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
