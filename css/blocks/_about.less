@@ -1,0 +1,91 @@
+// main: ../style.less
+
+.about {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #25201c;
+    box-shadow: 0px 0px 14px 3px @secondary;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @media @small {
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+        }
+    }
+
+    &__main {
+        position: relative;
+        width: 50%;
+        height: inherit;
+
+        @media @small {
+            display: none;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        margin-top: 100px;
+        margin-left: 40px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        color: @primary;
+        text-transform: uppercase;
+        font-size: 4.5rem;
+        letter-spacing: 0.5rem;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 300px;
+            height: 300px;
+            border: 12px solid @primary;
+            background-color: transparent;
+
+            @media @small {
+                display: none;
+            }
+        }
+
+        @media @small {
+            position: static;
+            margin: 0;
+        }
+    }
+
+    &__photo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__text {
+        width: 50%;
+        overflow: hidden;
+        padding: 60px;
+
+        & p {
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.5rem;
+            margin: auto;
+
+            color: @primary;
+        }
+
+        @media @small {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+}

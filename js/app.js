@@ -15,7 +15,7 @@ $(function () {
     })
 
     function checkScroll(scrollPos, introH) {
-        if (scrollPos > introH) {
+        if (scrollPos > introH / 2) {
             header.addClass('fixed')
         } else {
             header.removeClass('fixed')
@@ -69,8 +69,36 @@ $(function () {
     })
 
     /* Modal windows / Sweet Alert */
-    let formBtn = document.querySelector('#form__btn')
-    formBtn.addEventListener('click', function () {
-        Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
+    let form = document.querySelector('form')
+    form.addEventListener('submit', function (formResponse) {
+        formResponse.preventDefault()
+        let data = new FormData(this) // Сборка формы
+        let url = 'https://jsonplaceholder.typicode.com/posts'
+        fetch(url, {
+            method: 'post',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            },
+            body: data,
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Ошибка сервера')
+                }
+            })
+            .then((json) => {
+                Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
+            })
+            .catch((error) => {
+                Swal.fire('Уупс...', 'Что-то пошло не так! Попробуйте еще раз', 'error')
+            })
+    })
+
+    /* Burger button "close" */
+    $('#burger').on('click', function (close) {
+        close.preventDefault()
+        $(this).toggleClass('burger--active')
     })
 })
