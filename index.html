@@ -36,12 +36,13 @@
     <body>
         <!-- HEADER -->
         <header class="header" id="header">
-            <nav class="nav">
+            <nav class="nav" id="nav">
                 <a href="#" class="nav__link" data-scroll="#intro">Home</a>
                 <a href="#" class="nav__link" data-scroll="#about">About me</a>
                 <a href="#" class="nav__link" data-scroll="#portfolio">Portfolio</a>
                 <a href="#" class="nav__link" data-scroll="#contacts">Contacts</a>
             </nav>
+
             <div class="social">
                 <a class="social__link" href="https://www.instagram.com/dari_a_ku" target="_blank">
                     <svg class="social__icon" style="stroke-width: 20px" id="instagramIconHeader" viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg">
@@ -79,6 +80,7 @@
                     </svg>
                 </a>
             </div>
+
             <button class="burger" id="burger" type="button">
                 <span class="burger__item">Menu</span>
             </button>
@@ -124,22 +126,22 @@
 
         <!-- PORTFOLIO -->
         <div class="portfolio" id="portfolio">
-            <div class="portfolio__item" data-aos="fade-in">
+            <div class="portfolio__item" data-aos="fade-in" data-modal="#modal-portfolio-1">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-1.jpg" alt="portfolio-1" />
             </div>
-            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="200">
+            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="200" data-modal="#modal-portfolio-2">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-2.jpg" alt="portfolio-2" />
             </div>
-            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="400">
+            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="400" data-modal="#modal-portfolio-3">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-3.jpg" alt="portfolio-3" />
             </div>
-            <div class="portfolio__item" data-aos="fade-in">
+            <div class="portfolio__item" data-aos="fade-in" data-modal="#modal-portfolio-4">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-4.jpg" alt="portfolio-4" />
             </div>
-            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="200">
+            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="200" data-modal="#modal-portfolio-5">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-5.jpg" alt="portfolio-5" />
             </div>
-            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="400">
+            <div class="portfolio__item" data-aos="fade-in" data-aos-delay="400" data-modal="#modal-portfolio-6">
                 <img class="portfolio__image img" src="img/portfolio/portfolio-6.jpg" alt="portfolio-6" />
             </div>
         </div>
@@ -148,9 +150,9 @@
         <section class="contacts" id="contacts">
             <div class="container container--sm">
                 <div class="contacts__inner">
-                    <h3 class="contacts__header" data-aos="scale">Свяжитесь со мной</h3>
+                    <h3 class="contacts__header" data-aos="zoom-in">Свяжитесь со мной</h3>
                     <div class="сommunication">
-                        <div class="сommunication__info" data-aos="slider-left">
+                        <div class="сommunication__info" data-aos="fade-right">
                             <h4 class="сommunication__info-header">Контакты</h4>
                             <p class="сommunication__info-content">
                                 Агенство "Новые лица"
@@ -194,7 +196,7 @@
                                 </a>
                             </div>
                         </div>
-                        <form class="feedback-form" data-aos="slider-right" action="mail.php" method="POST">
+                        <form class="feedback-form" data-aos="fade-left" action="mail.php" method="POST">
                             <input class="feedback-form__input" type="text" name="user_name" placeholder="Имя" required />
                             <input class="feedback-form__input" type="email" name="user_email" placeholder="Эл. почта" required />
                             <input class="feedback-form__input" type="tel" name="user_phone" placeholder="Телефон" required />
@@ -213,6 +215,73 @@
                 <a class="footer__author" href="https://vk.com/kkulebaev" target="_blank">husband</a>&gt;&nbsp;&copy; 2020
             </h4>
         </footer>
+
+        <!-- MODAL WINDOWS -->
+        <div class="modal" id="modal-portfolio-1">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-1.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-portfolio-2">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-2.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-portfolio-3">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-3.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-portfolio-4">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-4.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-portfolio-5">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-5.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-portfolio-6">
+            <div class="modal__window">
+                <button class="modal__btn-close" type="button" data-close>
+                    <img src="img/icons/close.svg" alt="btn-close" />
+                </button>
+                <div class="modal__item">
+                    <img src="img/portfolio/portfolio-6.jpg" alt="Photo-1" class="modal__img" />
+                </div>
+            </div>
+        </div>
 
         <!-- JAVASCRIPT -->
 

@@ -9,6 +9,10 @@ body {
 }
 body {
     background: @primary;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 *,
 *:before,
@@ -37,11 +41,11 @@ a {
 
 // Blocks
 
+@import 'pieces/_helpers.less';
 @import 'blocks/_header.less';
 @import 'blocks/_intro.less';
 @import 'blocks/_about.less';
 @import 'blocks/_portfolio.less';
 @import 'blocks/_contacts.less';
 @import 'blocks/_footer.less';
-@import 'pieces/_animations.less';
-@import 'pieces/_helpers.less';
+@import 'blocks/_modals.less';

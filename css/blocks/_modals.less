@@ -1,0 +1,58 @@
+// main: ../style.less
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 0 2rem;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: fade(@secondary, 90%);
+
+    &__window {
+        position: relative;
+        margin: auto;
+        padding: 0.2rem;
+        background: @primary;
+        height: auto;
+
+        transform: scale(0) translateX(-100%);
+        transition: transform 0.2s linear;
+    }
+
+    &__item {
+        height: 95vh;
+    }
+
+    &__img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    &__btn-close {
+        width: 3.4rem;
+        height: 3.4rem;
+        cursor: pointer;
+        background: none;
+        padding: 0;
+        border: 0;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        transform: rotate(0);
+        transition: transform 0.2s linear;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+
+    &.show {
+        display: flex;
+    }
+}

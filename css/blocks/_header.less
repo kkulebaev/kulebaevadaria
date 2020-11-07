@@ -9,46 +9,71 @@
     top: 0;
     right: 0;
     z-index: 1000;
-    padding: 15px;
+    padding: 1.5rem;
 
     &.fixed {
         position: fixed;
         background: #dac1af;
+
+        @media @small {
+            background: transparent;
+        }
     }
 
     @media @small {
         justify-content: space-between;
+        align-items: start;
+    }
+    @media @super-small {
+        justify-content: flex-end;
     }
 }
 .nav {
-    margin: 0 20px;
     &__link {
-        margin-left: 20px;
+        margin-right: 2rem;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 1.4rem;
         font-family: 'Raleway', sans-serif;
         color: @secondary;
         letter-spacing: 0.25em;
         opacity: 0.75;
         transition: opacity 0.1s linear;
 
-        &:first-child {
-            margin-left: 0;
-        }
-
         &:hover {
             opacity: 1;
+        }
+
+        @media @small {
+            margin-right: 0;
+            opacity: 1;
+            font-size: 1.8rem;
         }
     }
 
     @media @small {
         display: none;
+
+        &--active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 1.5rem 0;
+            background: #dac1af;
+
+            & .nav__link {
+                padding: 1.5rem 0;
+            }
+        }
     }
 }
 .social {
     &__link {
-        margin: 5px;
+        margin: 0.5rem;
         opacity: 0.75;
         transition: opacity 0.1s linear;
 
@@ -58,28 +83,39 @@
     }
 
     &__icon {
-        width: 32px;
-        height: 32px;
+        width: 3.2rem;
+        height: 3.2rem;
         fill: none;
         stroke: #000;
+    }
+
+    &:not(&--sm) {
+        @media @small {
+            display: flex;
+            flex-direction: column;
+        }
+        @media @super-small {
+            display: none;
+        }
     }
 }
 .burger {
     display: none;
     background: none;
     border: 0;
-    padding: 15px;
+    padding: 1.5rem;
     cursor: pointer;
     position: relative;
+    margin: 0.5rem;
 
     &__item {
         position: absolute;
         top: 50%;
-        margin-top: -2px;
+        margin-top: -0.2rem;
         left: 50%;
-        margin-left: -15px;
-        width: 30px;
-        height: 4px;
+        margin-left: -1.5rem;
+        width: 3rem;
+        height: 0.4rem;
 
         transition: 0.2s;
 
@@ -95,21 +131,21 @@
             transition: 0.5s;
             position: absolute;
             top: 50%;
-            margin-top: -2px;
+            margin-top: -0.2rem;
             left: 50%;
-            margin-left: -15px;
-            width: 30px;
-            height: 4px;
+            margin-left: -1.5rem;
+            width: 3rem;
+            height: 0.4rem;
 
             background-color: @secondary;
         }
 
         &:before {
-            transform: translateY(-8px);
+            transform: translateY(-0.8rem);
         }
 
         &:after {
-            transform: translateY(8px);
+            transform: translateY(0.8rem);
         }
     }
 

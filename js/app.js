@@ -1,5 +1,6 @@
 $(function () {
-    /* Fixed Header */
+    /* Fixed Header 
+    ================*/
     let header = $('#header')
     let intro = $('#intro')
     let introH = intro.innerHeight()
@@ -22,23 +23,27 @@ $(function () {
         }
     }
 
-    /* Smooth scroll */
+    /* Smooth scroll 
+    ==================*/
     $('[data-scroll]').on('click', function (event) {
         event.preventDefault()
 
         let elementId = $(this).data('scroll')
         let elementOffset = $(elementId).offset().top
 
-        console.log(elementOffset)
         $('html, body').animate(
             {
                 scrollTop: elementOffset,
             },
             1000
         )
+
+        $(burger).toggleClass('burger--active')
+        $(nav).toggleClass('nav--active')
     })
 
-    /* SVG-icon animations */
+    /* SVG-icon animations 
+    =======================*/
     new Vivus('instagramIconHeader', { duration: 200 })
     new Vivus('telegramIconHeader', { duration: 200 })
     new Vivus('vkIconHeader', { duration: 200 })
@@ -46,7 +51,8 @@ $(function () {
     new Vivus('telegramIcon', { duration: 200 })
     new Vivus('vkIcon', { duration: 200 })
 
-    /* Animation sections */
+    /* Animation sections 
+    ======================*/
     AOS.init({
         // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -68,7 +74,8 @@ $(function () {
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
     })
 
-    /* Modal windows / Sweet Alert */
+    /* Modal windows / Sweet Alert 
+    ===============================*/
     let form = document.querySelector('form')
     form.addEventListener('submit', function (formResponse) {
         formResponse.preventDefault()
@@ -96,9 +103,68 @@ $(function () {
             })
     })
 
-    /* Burger button "close" */
-    $('#burger').on('click', function (close) {
-        close.preventDefault()
-        $(this).toggleClass('burger--active')
+    /* Burger menu 
+    ========================*/
+    let nav = document.querySelector('#nav')
+    let burger = document.querySelector('#burger')
+
+    $(burger).on('click', function (event) {
+        event.preventDefault()
+        $(burger).toggleClass('burger--active')
+        $(nav).toggleClass('nav--active')
+    })
+
+    /* Modal windows 
+    ========================*/
+    const modalCall = $('[data-modal')
+    const modalClose = $('[data-close')
+
+    modalCall.on('click', function (event) {
+        event.preventDefault()
+
+        let $this = $(this)
+        let modalId = $this.data('modal')
+
+        $(modalId).addClass('show')
+        $('body').addClass('no-scroll')
+
+        setTimeout(function () {
+            $(modalId).find('.modal__window').css({
+                transform: 'scale(1) translateX(0)',
+            })
+        }, 200)
+    })
+
+    modalClose.on('click', function (event) {
+        event.preventDefault()
+
+        let $this = $(this)
+        let modalParent = $this.parents('.modal')
+
+        modalParent.find('.modal__window').css({
+            transform: 'scale(0) translateX(-100%)',
+        })
+
+        setTimeout(function () {
+            modalParent.removeClass('show')
+            $('body').removeClass('no-scroll')
+        }, 200)
+    })
+
+    $('.modal').on('click', function (event) {
+        let $this = $(this)
+
+        $this.find('.modal__window').css({
+            transform: 'scale(0) translateX(-100%)',
+        })
+
+        setTimeout(function () {
+            $this.removeClass('show')
+            $('body').removeClass('no-scroll')
+        }, 200)
+    })
+
+    $('.modal__window').on('click', function (event) {
+        event.stopPropagation()
     })
 })
