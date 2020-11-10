@@ -130,7 +130,7 @@ $(function () {
 
         setTimeout(function () {
             $(modalId).find('.modal__window').css({
-                transform: 'scale(1) translateX(0)',
+                transform: 'scale(1)',
             })
         }, 200)
     })
@@ -142,7 +142,7 @@ $(function () {
         let modalParent = $this.parents('.modal')
 
         modalParent.find('.modal__window').css({
-            transform: 'scale(0) translateX(-100%)',
+            transform: 'scale(0)',
         })
 
         setTimeout(function () {
@@ -155,7 +155,7 @@ $(function () {
         let $this = $(this)
 
         $this.find('.modal__window').css({
-            transform: 'scale(0) translateX(-100%)',
+            transform: 'scale(0)',
         })
 
         setTimeout(function () {

@@ -1,0 +1,88 @@
+// main: ../style.less
+
+.burger {
+    display: none;
+
+    padding: 1.5rem;
+    margin: 0.5rem;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    position: relative;
+
+    &--active &__item {
+        height: 0;
+
+        &:before {
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &:after {
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media @small {
+        display: block;
+    }
+}
+
+.burger__item {
+    display: block;
+
+    width: 3rem;
+    height: 0.4rem;
+
+    font-size: 0;
+    color: transparent;
+
+    background-color: @secondary;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -0.2rem;
+    left: 50%;
+    margin-left: -1.5rem;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+
+        width: 3rem;
+        height: 0.4rem;
+
+        background-color: @secondary;
+
+        position: absolute;
+        top: 50%;
+        margin-top: -0.2rem;
+        left: 50%;
+        margin-left: -1.5rem;
+
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+    }
+
+    &:before {
+        -webkit-transform: translateY(-0.8rem);
+        -ms-transform: translateY(-0.8rem);
+        transform: translateY(-0.8rem);
+    }
+
+    &:after {
+        -webkit-transform: translateY(0.8rem);
+        -ms-transform: translateY(0.8rem);
+        transform: translateY(0.8rem);
+    }
+}

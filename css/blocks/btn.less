@@ -1,0 +1,52 @@
+// main: ../style.less
+
+.btn {
+    display: inline-block;
+
+    min-width: 15rem;
+    max-width: 18rem;
+    padding: 1.5rem 2.7rem;
+    margin: 0.3rem;
+
+    font-size: 1.6rem;
+    color: @secondary;
+    font-family: inherit;
+    line-height: 1.1;
+    font-weight: 700;
+    text-align: center;
+
+    background-color: @primary;
+    border: 1px solid @secondary;
+    border-radius: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    -webkit-transition: background-color 0.2s linear, color 0.2s linear, -webkit-box-shadow 0.2s linear;
+    transition: background-color 0.2s linear, color 0.2s linear, -webkit-box-shadow 0.2s linear;
+    -o-transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear;
+    transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear;
+    transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &--black {
+        &:hover {
+            background-color: @secondary;
+            color: @primary;
+            -webkit-box-shadow: 0.2rem 0.2rem 1rem fade(#000, 24%);
+            box-shadow: 0.2rem 0.2rem 1rem fade(#000, 24%);
+        }
+    }
+
+    &--pink {
+        &:hover {
+            background-color: @pink;
+        }
+    }
+
+    @media @small {
+        min-width: 0;
+    }
+}

@@ -1,0 +1,47 @@
+// main: ../style.less
+
+.header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    padding: 1.5rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &.fixed {
+        position: fixed;
+        background: #dac1af;
+
+        @media @small {
+            background: transparent;
+        }
+    }
+
+    @media @small {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+    }
+    @media @super-small {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+}

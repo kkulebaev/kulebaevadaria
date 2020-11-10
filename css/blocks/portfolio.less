@@ -1,0 +1,42 @@
+// main: ../style.less
+
+.portfolio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.portfolio__item {
+    width: 33.333333%;
+    overflow: hidden;
+    cursor: pointer;
+
+    @media @small {
+        width: 50%;
+    }
+    @media @extra-small {
+        width: 100%;
+    }
+}
+
+.portfolio__image {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+
+    &:hover {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}

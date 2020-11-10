@@ -1,0 +1,48 @@
+// main: ../style.less
+
+.social {
+    &:not(&--sm) {
+        @media @small {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        @media @super-small {
+            display: none;
+        }
+    }
+}
+
+.social__link {
+    margin: 0.5rem;
+    opacity: 0.75;
+
+    -webkit-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.social__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+
+    fill: none;
+    stroke: #000;
+
+    -webkit-transition: stroke 0.2s linear;
+    -o-transition: stroke 0.2s linear;
+    transition: stroke 0.2s linear;
+
+    &:hover {
+        stroke: @pink;
+    }
+}

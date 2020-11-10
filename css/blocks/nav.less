@@ -1,0 +1,59 @@
+// main: ../style.less
+
+.nav {
+    @media @small {
+        display: none;
+
+        &--active {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            width: 100%;
+            padding: 1.5rem 0;
+
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            text-align: center;
+
+            background: #dac1af;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            & .nav__link {
+                padding: 1.5rem 0;
+            }
+        }
+    }
+}
+
+.nav__link {
+    margin-right: 2rem;
+
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    color: @secondary;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    opacity: 0.75;
+
+    -webkit-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media @small {
+        margin-right: 0;
+        font-size: 1.8rem;
+        opacity: 1;
+    }
+}
