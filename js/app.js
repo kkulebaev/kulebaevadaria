@@ -42,66 +42,92 @@ $(function () {
         $(nav).toggleClass('nav--active')
     })
 
-    /* SVG-icon animations 
-    =======================*/
-    new Vivus('instagramIconHeader', { duration: 200 })
-    new Vivus('telegramIconHeader', { duration: 200 })
-    new Vivus('vkIconHeader', { duration: 200 })
-    new Vivus('instagramIcon', { duration: 200 })
-    new Vivus('telegramIcon', { duration: 200 })
-    new Vivus('vkIcon', { duration: 200 })
-
     /* Animation sections 
     ======================*/
     AOS.init({
-        // Global settings:
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 100, // offset (in px) from the original trigger point
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 1500, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: false, // whether animation should happen only once - while scrolling down
-        mirror: false, // whether elements should animate out while scrolling past them
-        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+        offset: 100,
+        delay: 0,
+        duration: 1500,
+        easing: 'ease',
+        once: false,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
     })
 
     /* Modal windows / Sweet Alert 
     ===============================*/
-    let form = document.querySelector('form')
-    form.addEventListener('submit', function (formResponse) {
-        formResponse.preventDefault()
-        let data = new FormData(this) // Сборка формы
-        let url = 'https://jsonplaceholder.typicode.com/posts'
-        fetch(url, {
-            method: 'post',
-            headers: {
-                'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            },
-            body: data,
-        })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json()
+    // const form = document.querySelector('#feedback__form')
+    // console.log(form)
+    // const form = $('#feedback__form')[0]
+    // $('#feedback__form').submit(function (event) {
+    //     event.preventDefault()
+
+    //     let data = new FormData(this) // Сборка формы
+    //     let url = 'https://jsonplaceholder.typicode.com/posts'
+    //     fetch(url, {
+    //         method: 'post',
+    //         headers: {
+    //             'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    //         },
+    //         body: data,
+    //     })
+    //         .then((response) => {
+    //             if (response.ok) {
+    //                 return response.json()
+    //             } else {
+    //                 throw new Error('Ошибка сервера')
+    //             }
+    //         })
+    //         .then((json) => {
+    //             Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
+    //             form.reset()
+    //         })
+    //         .catch((error) => {
+    //             Swal.fire('Уупс...', 'Что-то пошло не так! Попробуйте еще раз', 'error')
+    //         })
+    // })
+
+    /* PHPMailer / Sweet Alert */
+
+    // Отправка данных на сервер
+    function send(event, php) {
+        console.log('Отправка запроса')
+        event.preventDefault ? event.preventDefault() : (event.returnValue = false)
+        var req = new XMLHttpRequest()
+        req.open('POST', php, true)
+        req.onload = function () {
+            if (req.status >= 200 && req.status < 400) {
+                json = JSON.parse(this.response) // Ебанный internet explorer 11
+                console.log(json)
+
+                // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+                if (json.result == 'success') {
+                    Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
+                    form.reset()
                 } else {
-                    throw new Error('Ошибка сервера')
+                    // Если произошла ошибка
+                    Swal.fire('Уупс...', 'Что-то пошло не так! Попробуйте еще раз', 'error')
                 }
-            })
-            .then((json) => {
-                Swal.fire('Сообщение отправлено!', 'Я отвечу Вам в ближайшее время', 'success')
-            })
-            .catch((error) => {
-                Swal.fire('Уупс...', 'Что-то пошло не так! Попробуйте еще раз', 'error')
-            })
-    })
+                // Если не удалось связаться с php файлом
+            } else {
+                alert('Ошибка сервера. Номер: ' + req.status)
+            }
+        }
+
+        // Если не удалось отправить запрос. Стоит блок на хостинге
+        req.onerror = function () {
+            alert('Ошибка отправки запроса')
+        }
+        req.send(new FormData(event.target))
+    }
 
     /* Burger menu 
     ========================*/

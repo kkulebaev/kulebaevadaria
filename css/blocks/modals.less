@@ -22,6 +22,8 @@
 }
 
 .modal__window {
+    width: 100%;
+    max-width: 991px;
     height: auto;
     margin: auto;
     padding: 0.2rem;
@@ -39,6 +41,20 @@
     -o-transition: transform 0.2s linear;
     transition: transform 0.2s linear;
     transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.modal__content {
+    padding: 3rem 1rem;
+}
+
+.modal__title {
+    margin-bottom: 2rem;
+
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    color: @secondary;
+    font-weight: 700;
+    text-align: center;
 }
 
 .modal__item {
