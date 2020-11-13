@@ -8,6 +8,14 @@
     font-weight: 700;
 
     background-color: @secondary;
+
+    @media @extra-small {
+        font-size: 1.5rem;
+    }
+
+    @media @super-small {
+        font-size: 1.2rem;
+    }
 }
 
 .footer__inner {
@@ -29,7 +37,7 @@
     padding: 1rem 0;
 
     @media @extra-small {
-        font-size: 1.5rem;
+        margin-right: 2rem;
     }
 }
 
@@ -85,5 +93,23 @@
                 display: none;
             }
         }
+    }
+
+    @media @small {
+        width: 100%;
+        max-width: 100px;
+        margin-right: 0.5rem;
+    }
+
+    @media @extra-small {
+        width: 100%;
+        max-width: 70px;
+        margin-right: 0;
+    }
+}
+
+.footer__copy {
+    @media @extra-small {
+        text-align: right;
     }
 }
