@@ -49,9 +49,14 @@
     &--modal {
         font-size: 1.4rem;
         text-transform: uppercase;
+
         &:hover {
             background-color: @secondary;
             color: @primary;
+        }
+
+        @media @small {
+            display: none;
         }
     }
 

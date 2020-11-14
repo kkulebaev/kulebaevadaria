@@ -2,117 +2,22 @@
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    @media @small {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media @extra-small {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
 }
 
 .portfolio__item {
     overflow: hidden;
-    border: 1px dashed @secondary;
-    background: @primary;
-    padding: 20px;
-    color: @secondary;
-    font-size: 30px;
-    min-height: 300px;
-    text-align: center;
-}
-
-.portfolio__item-1 {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: 3;
-    grid-column-end: 5;
-}
-
-.portfolio__item-2 {
-    grid-row-start: 3;
-    grid-column-start: 1;
-    grid-row-end: 5;
-    grid-column-end: 5;
-}
-
-.portfolio__item-3 {
-    grid-row-start: 1;
-    grid-column-start: 5;
-    grid-row-end: 5;
-    grid-column-end: 11;
-}
-
-.portfolio__item-4 {
-    grid-row-start: 1;
-    grid-column-start: 11;
-    grid-row-end: 3;
-    grid-column-end: 16;
-}
-
-.portfolio__item-5 {
-    grid-row-start: 3;
-    grid-column-start: 11;
-    grid-row-end: 5;
-    grid-column-end: 16;
-}
-
-.portfolio__item-6 {
-    grid-row-start: 5;
-    grid-column-start: 1;
-    grid-row-end: 8;
-    grid-column-end: 4;
-}
-
-.portfolio__item-7 {
-    grid-row-start: 5;
-    grid-column-start: 4;
-    grid-row-end: 8;
-    grid-column-end: 9;
-}
-
-.portfolio__item-8 {
-    grid-row-start: 5;
-    grid-column-start: 9;
-    grid-row-end: 8;
-    grid-column-end: 13;
-}
-
-.portfolio__item-9 {
-    grid-row-start: 5;
-    grid-column-start: 13;
-    grid-row-end: 8;
-    grid-column-end: 16;
-}
-
-.portfolio__item-10 {
-    grid-row-start: 8;
-    grid-column-start: 1;
-    grid-row-end: 10;
-    grid-column-end: 6;
-}
-
-.portfolio__item-11 {
-    grid-row-start: 10;
-    grid-column-start: 1;
-    grid-row-end: 12;
-    grid-column-end: 6;
-}
-
-.portfolio__item-12 {
-    grid-row-start: 8;
-    grid-column-start: 6;
-    grid-row-end: 12;
-    grid-column-end: 13;
-}
-
-.portfolio__item-13 {
-    grid-row-start: 8;
-    grid-column-start: 13;
-    grid-row-end: 10;
-    grid-column-end: 16;
-}
-
-.portfolio__item-14 {
-    grid-row-start: 10;
-    grid-column-start: 13;
-    grid-row-end: 12;
-    grid-column-end: 16;
 }
 
 .portfolio__image {

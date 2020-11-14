@@ -2,10 +2,23 @@
 
 .progress-bar {
     margin-bottom: 3rem;
+    width: 70%;
+
+    @media @medium {
+        width: 90%;
+    }
+    @media @small {
+        width: 100%;
+    }
+    @media @extra-small {
+        margin: 0 auto;
+        max-width: 250px;
+    }
 }
 
 .progress-bar__item {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
 }
@@ -13,13 +26,7 @@
 .progress-bar__title {
     font-size: 1.5rem;
     font-weight: 300;
-}
-
-.progress-bar__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 1.8rem;
+    margin-right: 1rem;
 }
 
 .progress-bar__bar {
