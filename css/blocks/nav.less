@@ -33,6 +33,7 @@
 
 .nav__link {
     margin-right: 2rem;
+    padding: 0.4rem 0.3rem;
 
     font-size: 1.4rem;
     font-family: 'Raleway', sans-serif;
@@ -41,38 +42,32 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    position: relative;
+    transition: color 0.2s linear;
 
-    -webkit-transition: opacity 0.1s linear;
-    -o-transition: opacity 0.1s linear;
-    transition: opacity 0.1s linear;
+    &--active {
+        position: relative;
 
-    &::after {
-        content: '';
-        display: block;
-
-        width: 0;
-        height: 0.1rem;
-
-        background: @secondary;
-
-        position: absolute;
-        left: 0;
-        bottom: -0.2rem;
-
-        -webkit-transition: width 0.3s linear;
-        -o-transition: width 0.3s linear;
-        transition: width 0.3s linear;
-    }
-
-    &:hover {
         &::after {
+            content: '';
+            display: block;
+
             width: 97%;
+            height: 0.2rem;
+
+            background: @secondary;
+
+            position: absolute;
+            left: 0;
+            bottom: -0.2rem;
 
             @media @small {
                 display: none;
             }
         }
+    }
+
+    &:hover {
+        color: @white;
     }
 
     @media @small {
