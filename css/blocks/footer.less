@@ -2,7 +2,7 @@
 
 .footer {
     font-size: 2rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: @second-font;
     color: @primary;
     letter-spacing: 0.1rem;
     font-weight: 700;
@@ -18,21 +18,24 @@
     }
 }
 
-.footer__inner {
+.footer__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .footer__creator {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 1rem 0;
 
@@ -49,9 +52,14 @@
 
     -webkit-transition: transform 0.2s linear;
     -o-transition: transform 0.2s linear;
+    -webkit-transition: -webkit-transform 0.2s linear;
+    transition: -webkit-transform 0.2s linear;
     transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 
     &:hover {
+        -webkit-transform: translateY(-0.5rem);
+        -ms-transform: translateY(-0.5rem);
         transform: translateY(-0.5rem);
     }
 }

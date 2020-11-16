@@ -1,0 +1,55 @@
+// main: ../style.less
+
+.form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    max-width: 50rem;
+    height: inherit;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    @media @super-small {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem 0;
+
+    font-family: @third-font;
+
+    border: 0.1rem solid #a7937d;
+
+    &:focus {
+        outline: none;
+        border-color: fade(black, 70%);
+    }
+}
+
+.form__input {
+    max-height: 3rem;
+}
+
+.form__textarea {
+    resize: none;
+}

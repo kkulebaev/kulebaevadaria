@@ -130,7 +130,6 @@
                     <svg class="social__icon">
                         <use href="#instagram"></use>
                     </svg>
-                    <!-- <img class="social__icon" src="img/icons/instagram.svg" alt="instagram-icon" /> -->
                 </a>
                 <a class="social__link" href="https://t.me/kulebaevadaria" target="_blank">
                     <svg class="social__icon social__icon--tgm">
@@ -161,7 +160,7 @@
         <!-- ABOUT -->
         <section class="about" id="about" data-section-spy="about">
             <div class="container">
-                <div class="about__inner">
+                <div class="about__wrapper">
                     <div class="about__photo img">
                         <img class="about__img img" src="img/about/about-2.jpg" alt="about__photo" />
                     </div>
@@ -208,21 +207,23 @@
             <div class="container container--sm">
                 <h3 class="contacts__header" data-aos="zoom-in">Write me</h3>
                 <div class="feedback">
-                    <div class="feedback__info" data-aos="fade-right">
-                        <h4 class="feedback__info-header">Contacts</h4>
-                        <p class="feedback__info-content">
-                            Agency "New faces"
-                            <br />
-                            Arbat str., 1а, Moscow
-                            <br />
-                            119019, Russia
-                            <br />
-                            <br />
-                            +7 (987) 522 26 04
-                            <br />
-                            info@kulebaevadaria.ru
-                        </p>
-                        <div class="social social--sm">
+                    <div class="requisites" data-aos="fade-right">
+                        <address class="address">
+                            <h4 class="address__header">Contacts</h4>
+                            <p class="address__info">
+                                Agency "New faces"
+                                <br />
+                                Arbat str., 1а, Moscow
+                                <br />
+                                119019, Russia
+                                <br />
+                                <br />
+                                +7 (987) 522 26 04
+                                <br />
+                                info@kulebaevadaria.ru
+                            </p>
+                        </address>
+                        <div class="social">
                             <a class="social__link" href="https://www.instagram.com/dari_a_ku" target="_blank">
                                 <svg class="social__icon">
                                     <use href="#instagram"></use>
@@ -241,11 +242,11 @@
                         </div>
                     </div>
 
-                    <form class="feedback__form" id="feedback__form" data-aos="fade-left" method="POST" action="mail.php">
-                        <input class="feedback__input" type="text" name="user_name" placeholder="Name" required />
-                        <input class="feedback__input" type="email" name="user_email" placeholder="Email" required />
-                        <input class="feedback__input" type="tel" name="user_phone" placeholder="Phone (optional)" />
-                        <textarea class="feedback__textarea" name="user_message" placeholder="Add message..." required></textarea>
+                    <form class="form" id="form" data-aos="fade-left" method="POST" action="mail.php">
+                        <input class="form__input" type="text" name="user_name" placeholder="Name" required />
+                        <input class="form__input" type="email" name="user_email" placeholder="Email" required />
+                        <input class="form__input" type="tel" name="user_phone" placeholder="Phone (optional)" />
+                        <textarea class="form__textarea" name="user_message" placeholder="Add message..." required></textarea>
                         <button class="btn btn--black" type="submit">Send</button>
                     </form>
                 </div>
@@ -254,16 +255,18 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="footer__inner">
-                <h4 class="footer__creator">
-                    <a class="footer__author" href="https://github.com/kkulebaev">Creator's GitHub</a>
-                    <a class="footer__link" href="https://github.com/kkulebaev" target="_blank">
-                        <svg class="footer__icon">
-                            <use href="#github"></use>
-                        </svg>
-                    </a>
-                </h4>
-                <div class="footer__copy">All rights reserved &copy; 2020</div>
+            <div class="container container--sm">
+                <div class="footer__wrapper">
+                    <h4 class="footer__creator">
+                        <a class="footer__author" href="https://github.com/kkulebaev">Creator's GitHub</a>
+                        <a class="footer__link" href="https://github.com/kkulebaev" target="_blank">
+                            <svg class="footer__icon">
+                                <use href="#github"></use>
+                            </svg>
+                        </a>
+                    </h4>
+                    <div class="footer__copy">All rights reserved &copy; 2020</div>
+                </div>
             </div>
         </footer>
 

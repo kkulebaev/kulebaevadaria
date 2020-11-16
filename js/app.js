@@ -84,8 +84,8 @@ $(function () {
 
     /* Modal windows / Sweet Alert 
     ===============================*/
-    const form = document.querySelector('#feedback__form')
-    $('#feedback__form').submit(function (event) {
+    const form = document.querySelector('#form')
+    $('#form').submit(function (event) {
         event.preventDefault()
 
         let data = new FormData(this) // Сборка формы
